@@ -1,0 +1,49 @@
+#include <stdint.h>
+#include <conio.h>
+
+int main(){
+
+
+int arr[5],i,j,n,temp;
+int *ptr=&arr[0];
+
+printf("\n Enter the size of an array ");
+scanf(" %d",&n);
+printf("\n Enter the element of an array ");
+
+for(i=0;i<n;i++){
+
+scanf(" %d",(ptr+i));
+}
+
+printf("\n The element of an array is: ");
+
+for(i=0;i<n;i++){
+
+    printf(" %d",*(ptr+i));
+}
+for(i=0;i<n-1;i++){
+
+    for(j=0;j<n-i-1;j++){
+
+        if(*(ptr+j) > *(ptr+(j+1)))
+            {
+
+           temp=*(ptr+j);
+            *(ptr+j)=*(ptr+(j+1));
+            *(ptr+(j+1))=temp;
+           }
+    }
+
+}
+
+printf("Array element of an array after sorting: \n");
+
+for(i=0;i<n;i++){
+
+    printf("\n%d",*(ptr+i));
+}
+getch();
+return 0;
+
+}
